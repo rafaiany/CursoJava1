@@ -1,0 +1,51 @@
+
+**** Trace file opened at 20210107 095535 Brasilia Standard Time Rel. 3.0.16 (2016-12-06) [721.800]
+
+
+<* RfcAccept
+PROGID="NFE_INTEGRA" GWHOST=192.168.16.16 GWSERV=sapgw10 TRACE=1 >Thu Jan 07 09:55:35,065<
+
+	>> CPIC native call SAP_CMREGTP3 [0] convid: <initial>  09:55:35,108
+	<< CPIC native call SAP_CMREGTP3 [33] convid: <initial> rc: 0  09:55:35,183
+	>> CPIC native call SAP_CMACCPTP3(-2) [33] convid: <initial>  09:55:35,186
+	<< CPIC native call SAP_CMACCPTP3(-2) [33] convid:          rc: 0  09:55:35,190
+cosaccepttp: SAP_CMACCPTP3(waitTime=-2, conv_id=        , niHandle=33) returns: 0
+>>>> [3] <accepted> REG <ac: 1> >>> ACCEPT (        )
+<* RfcAccept successful
+	handle = 3 *>
+
+
+
+<* RfcAccept
+PROGID="NFE_INTEGRA" GWHOST=192.168.16.16 GWSERV=sapgw10 TRACE=1 >Thu Jan 07 09:55:35,259<
+
+	>> CPIC native call SAP_CMREGTP3 [0] convid: <initial>  09:55:35,264
+	<< CPIC native call SAP_CMREGTP3 [34] convid: <initial> rc: 0  09:55:35,332
+	>> CPIC native call SAP_CMACCPTP3(-2) [34] convid: <initial>  09:55:35,336
+	<< CPIC native call SAP_CMACCPTP3(-2) [34] convid:          rc: 0  09:55:35,339
+cosaccepttp: SAP_CMACCPTP3(waitTime=-2, conv_id=        , niHandle=34) returns: 0
+>>>> [4] <accepted> REG <ac: 1> >>> ACCEPT (        )
+<* RfcAccept successful
+	handle = 4 *>
+
+
+>>> RfcAbort [4] >Thu Jan 07 09:55:35,373< ...
+
+
+>>>> RfcAbort called by external program ...
+	handle = 4
+	text = Request cannot be dispatched. All listeners are stopped by the application.
+
+>>>> [4] <accepted> REG <ac: 2> >>> FLUSH (READ) (        )
+rflush :: Error : (deallocated or broken) Error> ab_rfcflush  channel.wflush failed(1)
+ Message :
+    null
+>>>> [4] <accepted> REG <ac: 3> >>> ABORT (        )
+	>> CPIC native call SAP_CMUNREGTP3 [34] convid:           09:55:35,375
+	<< CPIC native call SAP_CMUNREGTP3 [34] convid:          rc: 0  09:55:35,376
+>>>> [4] <accepted> REG <ac: 4> >>> CLOSE (        )
+RfcException raised by system [DESKTOP-4NGI7BN|NFE_INTEGRA]:
+	message: no message received
+	return code: RFC_FAILURE (1)
+	error group: 102
+	key: RFC_ERROR_COMMUNICATION>>>> [4] <accepted> REG <ac: 5> >>> FREE (        )

@@ -1,0 +1,40 @@
+
+**** Trace file opened at 20210107 095535 Brasilia Standard Time Rel. 3.0.16 (2016-12-06) [721.800]
+	>> CPIC native call SAP_CMACCPTP3(2) [33] convid:           09:55:35,261
+	<< CPIC native call SAP_CMACCPTP3(2) [33] convid:          rc: 6  09:55:35,263
+receiveConversationID: SAP_CMACCPTP3(waitTime=2, conv_id=        , niHandle=33) returns: 6
+get_cpic_error :: Error : CPIC-CALL: SAP_CMACCPTP3 on convId:         
+
+LOCATION    SAP-Gateway on host SAP-F02.FSERVER.LOCAL / sapgw10
+ERROR       registration of tp NFE_INTEGRA from host ??? not allowed
+TIME        Thu Jan 07 09:55:35 2021
+RELEASE     749
+COMPONENT   SAP-Gateway
+VERSION     2
+RC          720
+MODULE      D:/depot/bas/749_REL/src/krn/si/gw/gwxxrd.c
+LINE        4172
+COUNTER     10021
+
+>>>> Listen/WaitForRequest (counter = 1)
+Error> ab_rfclisten [3] channel-listen failed with Message: CPIC-CALL: SAP_CMACCPTP3 on convId:         
+
+LOCATION    SAP-Gateway on host SAP-F02.FSERVER.LOCAL / sapgw10
+ERROR       registration of tp NFE_INTEGRA from host ??? not allowed
+TIME        Thu Jan 07 09:55:35 2021
+RELEASE     749
+COMPONENT   SAP-Gateway
+VERSION     2
+RC          720
+MODULE      D:/depot/bas/749_REL/src/krn/si/gw/gwxxrd.c
+LINE        4172
+COUNTER     10021
+
+
+>>> RfcClose [3] >Thu Jan 07 09:55:35,278< ...
+
+>>>> [3] <accepted> REG <ac: 2> >>> CLOSE (        )
+	>> CPIC native call SAP_CMUNREGTP3 [33] convid:           09:55:35,279
+	<< CPIC native call SAP_CMUNREGTP3 [33] convid:          rc: 0  09:55:35,280
+<* RfcClose *>
+>>>> [3] <accepted> REG <ac: 3> >>> FREE (        )
